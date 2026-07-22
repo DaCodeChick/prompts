@@ -1,0 +1,25 @@
+Using the attached character reference image as the primary visual source, reimagine this exact character as if they are a native inhabitant of the Cyberpunk: Edgerunners universe, rendered in the precise 2D anime art style of Studio Trigger’s Cyberpunk: Edgerunners series.
+
+Preserve the character’s identity with absolute fidelity: keep the exact same face, facial structure, eye shape and color, hairstyle and hair color, skin tone, body type and proportions, height/build, and every distinctive feature (scars, tattoos, piercings, markings, nonhuman traits such as ears, tail, horns, fur, scales, etc.) exactly as they appear in the reference image. Do not alter, stylize, or “improve” the core appearance — only change the clothing, add fitting cyberpunk elements, and shift the art style and environment.
+
+Dress the character in authentic Cyberpunk: Edgerunners style as a [Edgerunner street merc / Netrunner tech specialist / JoyToy / Militech corporate operative / Arasaka elite agent].
+
+- **Edgerunner**: Rugged tactical streetwear featuring a signature oversized or reinforced jacket (leather, synthetic, or armored with neon piping and patches), cargo or tactical pants with holsters and pouches, heavy combat boots, fingerless or tech gloves. Armed and ready Night City survivor look.
+
+- **Netrunner**: Sleek high-tech jacket or hooded techwear with visible neural ports and data interfaces at the neck and temples, augmented reality visor or smart glasses, fingerless hacking gloves, slim tactical pants with tech modules, subtle floating holographic interfaces.
+
+- **JoyToy**: Provocative high-end cyber-enhanced outfits with revealing crop tops, mesh or fishnet panels, short skirts or tight shiny pants, metallic/latex materials, neon-colored jackets or vests (purple, cyan, pink, gold), feather boas, leopard print accents, sequins, and platform heels or high boots. Incorporate visible cyberware such as cybernetic limbs (possibly spiked or armored), facial implants, glowing elements, and tattoos. Glamorous yet gritty and dangerous Night City pleasure-worker aesthetic with bold, flashy neon colors and seductive attitude.
+
+- **Militech**: Professional corporate military tactical gear in olive green and tan camouflage with a distinctive black hexagonal/honeycomb pattern, accented with bright yellow/gold trim on shoulders, armbands, chest rig, and boots. Features a full tactical helmet with advanced multi-lens optic visor or integrated cyber-optics, layered chest rig and modular vest with numerous pouches and equipment mounts, reinforced camo pants with knee pads and straps, heavy yellow/tan combat boots. Visible “MILITECH” branding on chest, helmet, and neck armor. Some variants show exposed yellow cabling and cybernetic enhancements. Disciplined, high-tech paramilitary appearance fitting Militech corporate forces in Night City.
+
+- **Arasaka**: Sleek black high-tech corporate security and enforcer gear featuring black leather or armored jackets/suits with prominent red accents, red underlayers, high collars, and zippers. Includes full combat armor variants with helmets, red-glowing cyber-optic visors or implants, textured armor panels, harnesses with pouches and straps, knee pads, and heavy boots. Clear “ARASAKA” branding on vests, shoulders, and gear. Signature red glowing cyberware elements. Professional, intimidating corporate paramilitary or samurai-enforcer aesthetic.
+
+Naturally integrate appropriate cybernetic enhancements: glowing cyber-optic eyes or implants, visible neural and data ports on neck and temples, chrome cybernetic arms or legs with plating and indicator lights, subtle cables or holsters that blend into the outfit. Match the level of chrome to typical Edgerunners characters.
+
+Pose the character in a dynamic, confident, action-oriented stance typical of Edgerunners crew members — ready for combat, mid-movement, or standing with attitude in the rain.
+
+Setting: Rainy Night City streets at night. Wet pavement reflecting vibrant neon signs and holographic advertisements (mix of English and stylized Japanese text). Distant flying cars and AVs overhead, steam and atmospheric fog, gritty urban decay mixed with high technology. Dramatic cinematic lighting with strong neon color casts (cyan, magenta, hot pink, electric blue, purple) creating colorful rim lighting and reflections on wet surfaces and cyberware, deep shadows, high contrast.
+
+Art style: Faithfully replicate the distinctive Studio Trigger 2D anime style from Cyberpunk: Edgerunners — bold clean linework, vibrant saturated neon color palette against dark gritty tones, detailed shading and highlights on clothing textures, metal cyberware, and skin, expressive and intense eyes with that signature series depth, dynamic composition, atmospheric depth, fluid sense of motion even in a still frame, high-quality detailed rendering that matches the show exactly.
+
+Cinematic framing, masterpiece, absurdres, best quality, Studio Trigger x Cyberpunk: Edgerunners style, highly detailed textures, atmospheric neon reflections, rain effects.

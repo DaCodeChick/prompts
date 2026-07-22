@@ -1,0 +1,5 @@
+Character name: [Character Name] 
+Aspect ratio: Recommended (Suggested 4:5) 
+Text in image: Japanese      
+
+An emotional meme of this current character gently embracing their "younger self." The younger self shows hints of their personality, the current expression holds tenderness and awkwardness. A short single phrase. Soft light, let the whitespace bring the tears.  《Analysis》 Thoroughly analyze, parse, and infer from the reference image, designing hints of the childhood self and the current tenderness. Extract fixed key points. 《Art Style Variable》 AI selects the optimal art style for the worldview. Do not fix it. 《Format Variable》 Internally compare and optimize the presentation. No template repetition. 《Free Staging》 One item held in the younger self's hand. 《Quality》 Ultra-high definition, delicate expressions. avoid: blurry, jpeg artifacts, grainy, noise, low-res, plastic, messy hands, distorted face. 《Text》 Minimal and impactful. No real logos/SNS UI/character names. 《Main Subject》 The main subject is the character themselves (two generations). Do not distort faces or hands. 《Variable》 Character name = as specified, ratio = specified value.

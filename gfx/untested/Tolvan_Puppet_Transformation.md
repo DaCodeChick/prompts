@@ -1,0 +1,1 @@
+Make a photorealistic waist up picture of this character as a charming Jim Henson Muppet style puppet. random pose based on the source image's vibe. random expression. random setting based on the source image's vibe. random scene. entirely new image. no text from the source image. 
