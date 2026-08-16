@@ -1,0 +1,10 @@
+Create a 3d scene of a city block. Emphasis on detail is very important.
+
+The scene must have a timeline slider in the top, with the following options:
+1945, 1965, 1985, 2005, 2025 and 2055
+
+The point of the scene is to be able to select any of the 5 different years, and the scene will transform right in front of your eyes to the time period selected from the slider.
+
+The time period should effect all aspects of the city block. The buildings, the vehicles, the storefronts, advertisements, outfits on pedestrians, everything.
+
+This must be a polished high end scene with sfx, ability to navigate around and look at things, etc. Go all out.
