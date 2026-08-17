@@ -1,0 +1,1 @@
+Design a richly crafted voxel-art environment featuring a lighthouse on an island. There should be seagulls and boats. Include diverse vegetation on the island - and ensure the composition feels lively, colorful, and visually striking. Use threejs , but deliver the entire project as a single, self-contained HTML file that I can open directly in web browser.
