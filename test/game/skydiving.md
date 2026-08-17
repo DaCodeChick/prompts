@@ -1,0 +1,1 @@
+Create a 3d skydiving simulator. This is deliberately an open ended task. The exact implementation of the simulator is up to you, however there must be emphasis on high fidelity visuals, smooth gameplay and the polish that would be expected of an indie game.
