@@ -1,0 +1,1 @@
+Create a wrecking ball physics demo in a single HTML filr. A tall tower of stacked blocks with realistic rigid body physics -- gravity, friction, rotation, collisions. My mouse drags and swings a heavy wrecking ball on a chain so I can smash the tower and send blocks tumbling.
