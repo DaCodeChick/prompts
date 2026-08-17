@@ -31,7 +31,7 @@ Do **not** attempt GTA III visual fidelity. Build an open-world crime sandbox in
 
 ## Code and toolchain rules
 
-1. **Language:** C99 (preferred), C++98 or C++03. Absolutely no C++11 or later, no `auto`, no lambdas, no `<unordered_map>`.
+1. **Language:** C99 (preferred, otherwise C89 for Visual C on Win32), C++98 or C++03. Absolutely no C++11 or later, no `auto`, no lambdas, no `<unordered_map>`.
 2. **Alignment:** No unaligned pointer casts.
 3. **Memory:** Allocate pools up front; no per-frame malloc in the hot loop. Check every allocation.
 . **Assets:** Everything procedural or generated at build time (no Python, no Node). City geometry generated from a seed; textures generated procedurally or included as raw RGB565 with documented byte order. No downloads, no placeholder URLs.
