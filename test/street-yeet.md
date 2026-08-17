@@ -1,0 +1,1 @@
+Make me a low poly game called STREET YEET. Simple rules, it's a 3rd person camera view of the main character, they walk around a city block, and with one massive swing of their gigantic fist, can YEET anyone, anything, I mean, anything, a hilariously unrealistic distance away. Put in sfx, make it fun, and go all out.
