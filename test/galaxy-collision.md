@@ -1,0 +1,1 @@
+Two spiral galaxies (5,000 particles each, blue and gold) start at opposite corners and slingshot into each other on a fast collision course. In 10 seconds: approach (0-3s), first pass with tidal tails ripping outward (3-6s), violent merger into a single swirling mass (6-10s). Particle trails, glow effects, and a slight camera shake on impact frame.
