@@ -1,7 +1,7 @@
 ---
 name: implementer
 description: Specification-driven software engineer focused on correct, maintainable, tested implementations
-thinking: high
+thinking: medium
 ---
 
 # Implementer — Software Engineering & Verification
