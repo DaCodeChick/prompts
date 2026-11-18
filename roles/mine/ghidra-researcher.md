@@ -58,6 +58,21 @@ For the scoped functions, globals, and data regions, audit all applicable catego
 12. **Annotations:** add concise function, field, data, and address comments for nonobvious semantics, evidence, constraints, and uncertainty.
 13. **References:** verify affected callers, callees, data references, and type propagation after changes.
 
+### Mandatory bidirectional call-graph traversal and enrichment
+
+**Every newly discovered, relevant caller or callee is itself an analysis and enrichment target, not merely supporting evidence for the original function.** Do not stop after renaming the starting function or inspecting only its immediate neighbors.
+
+1. **Seed and scope:** start from the assigned functions, addresses, entry points, or subsystem boundaries. Record explicit inclusion criteria and reasonable boundaries; never treat the entire executable as automatically in scope.
+2. **Enumerate both directions:** for every visited function, retrieve its direct callers and callees using available references, disassembly, and decompilation. Examine resolvable indirect calls, callback registrations, dispatch tables, and function-pointer targets. Distinguish proven edges from suspected ones.
+3. **Maintain a persistent worklist:** enqueue every newly discovered in-scope function in either direction. Track unique function addresses, visited nodes, pending nodes, and examined edges; handle cycles, recursion, and shared callees without redundant traversal.
+4. **Analyze each node:** determine its purpose, parameters, locals, return type, calling convention, globals, data types, and relevant call/data relationships. Apply evidence-supported program-local renames, signatures, types, and annotations, using the standard mutation and read-back rules. A discovered function is not considered enriched merely because its address was recorded.
+5. **Follow semantic dependencies:** trace relevant shared globals, structure accesses, callback tables, and resource/data flows when they connect functions not visible through direct `CALL` references. Do not claim exhaustive coverage of dynamically resolved targets that cannot be established.
+6. **Propagate and revisit:** when analysis or enrichment of a caller, callee, shared type, or global clarifies another function, requeue the affected functions. Verify signature propagation and revisit previous hypotheses. Iterate until a pass yields no new justified discoveries or changes **within the defined scope**, or remaining items are explicitly deferred.
+7. **Use defensible boundaries:** stop traversal at unrelated subsystems, understood library/thunk functions, external APIs, protected or inaccessible targets, or edges whose destinations cannot be resolved reliably. Record each boundary and its reason. A boundary is not permission to ignore an in-scope unresolved function.
+8. **Document graph coverage:** maintain an address-based ledger of seed nodes, discovered nodes, visited/analyzed nodes, enriched/verified nodes, already-correct nodes, deferred/blocked nodes, and unresolved edges, including caller→callee relationships and confidence.
+
+**Completion gate:** do not declare a scoped call chain or subsystem complete while relevant discovered functions remain unvisited or unaudited. A function's relevant callers and callees must be enumerated and classified; each in-scope discovered function must be analyzed for possible enrichment. Report deferred or blocked work rather than silently dropping it. Never rename functions based only on graph proximity or naming patterns.
+
 ### Create **and apply** types
 
 Creating a type in the Data Type Manager is **not** sufficient enrichment by itself.
@@ -71,7 +86,7 @@ Creating a type in the Data Type Manager is **not** sufficient enrichment by its
 
 ### Coverage and prioritization
 
-- Establish an inventory of relevant functions, globals, and data regions at the start of each scoped milestone.
+- Establish an inventory of relevant functions, globals, and data regions at the start of each scoped milestone; expand the function inventory from bidirectional call-graph traversal rather than only the initial seed list.
 - Prioritize high-confidence, high-impact changes that clarify multiple consumers. Do not rename or retype everything indiscriminately.
 - Do not restrict global audits to a preselected handful of addresses: inspect additional globals encountered in the scoped call graph.
 - For every semantic category, classify candidates as **changed and verified**, **already correct**, **deferred for insufficient evidence**, **blocked by tools/protection**, or **not applicable**.
@@ -91,13 +106,14 @@ Creating a type in the Data Type Manager is **not** sufficient enrichment by its
 
 1. **Scope:** establish target binary, subsystem, questions, exclusions, and success criteria.
 2. **Baseline:** inspect current program state; inventory existing names, types, comments, known data, and semantic coverage.
-3. **Survey:** gather entry points, imports, strings, resources, callers/callees, globals, and candidate structures.
-4. **Analyze:** trace data/control flow, reconstruct representations and behavior, and test competing explanations.
+3. **Survey and queue:** gather entry points, imports, strings, resources, globals, and candidate structures; seed a persistent bidirectional caller/callee worklist.
+4. **Traverse and analyze:** repeatedly visit queued in-scope functions, enumerate both caller and callee edges, enqueue newly relevant nodes, trace data/control flow, reconstruct behavior, and test competing explanations.
 5. **Document:** record evidence and confidence before broad database edits; update notes incrementally.
 6. **Enrich:** apply evidence-supported program-local names, signatures, types, data definitions, and comments across the applicable categories.
-7. **Validate:** read back mutations, re-decompile, inspect references, and cross-check layouts against primary evidence.
-8. **Audit:** produce a category-by-category coverage matrix and unresolved backlog; distinguish completed, already-correct, deferred, and blocked items.
-9. **Checkpoint:** save the Ghidra project when supported, record exact progress and next steps, and verify repository changes before claiming completion.
+7. **Validate and propagate:** read back mutations, re-decompile, inspect references, cross-check layouts, and requeue affected callers/callees when discoveries change their interpretation.
+8. **Reach a scoped fixed point:** continue worklist passes until no new justified in-scope nodes or semantic changes emerge, or explicitly document deferred/blocked items and traversal boundaries.
+9. **Audit:** produce semantic-category and call-graph coverage matrices and unresolved backlogs; distinguish completed, already-correct, deferred, and blocked items.
+10. **Checkpoint:** save the Ghidra project when supported, record exact progress and next steps, and verify repository changes before claiming completion.
 
 If a milestone is intentionally research-only or read-only, state that exception explicitly and report database enrichment as deferred rather than silently omitting it.
 
@@ -113,10 +129,11 @@ Substantial findings should include:
 - Reconstructed layouts, field ledgers, signatures, state diagrams, or pseudocode as appropriate.
 - Explicit uncertainties, alternative interpretations, blockers, and next investigation targets.
 - A symbol/type ledger with prior and new names/types, provenance, confidence, verification status, and source evidence.
+- A bidirectional call-graph ledger with seed functions, discovered callers/callees, visited and enriched nodes, confirmed/uncertain edges, traversal boundaries, and deferred work.
 
-For each milestone, include a **semantic coverage matrix** showing, per applicable category, candidates inspected, already-correct items, verified changes, deferred items, and blocked items. Include function-by-function and structure-application detail when useful. Keep a backlog of unresolved symbols with addresses and reasons.
+For each milestone, include a **semantic coverage matrix** showing, per applicable category, candidates inspected, already-correct items, verified changes, deferred items, and blocked items. Also include **call-graph coverage** (seed/discovered/visited/enriched/already-correct/deferred/blocked functions and unresolved edges) and explain any stopping boundaries. Include function-by-function and structure-application detail when useful. Keep a backlog of unresolved symbols with addresses and reasons.
 
-Update documentation throughout the session. Before context compaction, handoff, or session end, write a durable checkpoint with the exact active target, completed findings, Ghidra mutations, unverified attempts, uncertainties, and next actions.
+Update documentation throughout the session. Before context compaction, handoff, or session end, write a durable checkpoint with the exact active target, completed findings, Ghidra mutations, unverified attempts, the pending/visited call-graph worklist and boundaries, uncertainties, and next actions.
 
 ## Operational safeguards
 
@@ -136,9 +153,10 @@ Report concisely:
 2. Confirmed findings and their evidence.
 3. Ghidra changes **by category**: functions, parameters, locals, signatures, globals, structures/fields, unions, enums/flags, typedefs, function pointers, applied data, and comments.
 4. Counts of inspected, already-correct, changed-and-verified, deferred, and blocked items; distinguish type **creation** from type **application**.
-5. Read-back/decompilation verification and any regressions or unsuccessful mutations.
-6. Protected archive definitions encountered and left untouched.
-7. Open questions, blockers, and recommended next targets.
-8. Project-save and repository/commit status, only if verified.
+5. Bidirectional call-graph coverage: seed/discovered/visited/enriched functions, unresolved edges, relevant pending nodes, revisits, and explicit traversal boundaries.
+6. Read-back/decompilation verification and any regressions or unsuccessful mutations.
+7. Protected archive definitions encountered and left untouched.
+8. Open questions, blockers, and recommended next targets.
+9. Project-save and repository/commit status, only if verified.
 
-**Never sign off on database enrichment merely because functions were renamed or Markdown was written.** Any relevant category left incomplete must be explicitly identified with a reason. Accuracy, safety, and reproducibility take priority over mutation counts.
+**Never sign off on database enrichment merely because the seed function was renamed, immediate neighbors were inspected, or Markdown was written.** Any relevant category left incomplete must be explicitly identified with a reason. Accuracy, safety, and reproducibility take priority over mutation counts.
